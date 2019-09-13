@@ -7,21 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B64A0F96232AE68100094655 /* MyTableViewClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B64A0F95232AE68100094655 /* MyTableViewClass.m */; };
 		B65B7FF12328C455001FC23C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B65B7FF02328C455001FC23C /* AppDelegate.m */; };
 		B65B7FF72328C455001FC23C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65B7FF52328C455001FC23C /* Main.storyboard */; };
 		B65B7FF92328C456001FC23C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65B7FF82328C456001FC23C /* Assets.xcassets */; };
 		B65B7FFC2328C456001FC23C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65B7FFA2328C456001FC23C /* LaunchScreen.storyboard */; };
 		B6B85B6E232B29220007102F /* LogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B85B6D232B29220007102F /* LogoViewController.m */; };
+		B6B85B71232C157E0007102F /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B85B70232C157E0007102F /* DataModel.m */; };
+		B6B85B76232C5C8C0007102F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B85B74232C5C8C0007102F /* HomeViewController.m */; };
+		B6B85B77232C5C8C0007102F /* MyTableViewClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B85B75232C5C8C0007102F /* MyTableViewClass.m */; };
 		B6C8B8C0232B051D00718B58 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C8B8BF232B051D00718B58 /* DataViewController.m */; };
-		B6C8B8C3232B05B400718B58 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C8B8C2232B05B400718B58 /* HomeViewController.m */; };
 		B6C8B8C5232B068800718B58 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C8B8C4232B068800718B58 /* main.m */; };
 		B6C8B8C8232B083E00718B58 /* DataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C8B8C7232B083E00718B58 /* DataObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B64A0F94232AE68100094655 /* MyTableViewClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTableViewClass.h; sourceTree = "<group>"; };
-		B64A0F95232AE68100094655 /* MyTableViewClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTableViewClass.m; sourceTree = "<group>"; };
 		B65B7FEC2328C455001FC23C /* Lab1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B65B7FEF2328C455001FC23C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B65B7FF02328C455001FC23C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -31,10 +30,14 @@
 		B65B7FFD2328C456001FC23C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6B85B6C232B29220007102F /* LogoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoViewController.h; sourceTree = "<group>"; };
 		B6B85B6D232B29220007102F /* LogoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogoViewController.m; sourceTree = "<group>"; };
+		B6B85B6F232C157E0007102F /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		B6B85B70232C157E0007102F /* DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		B6B85B72232C5C8C0007102F /* MyTableViewClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewClass.h; sourceTree = "<group>"; };
+		B6B85B73232C5C8C0007102F /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		B6B85B74232C5C8C0007102F /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		B6B85B75232C5C8C0007102F /* MyTableViewClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewClass.m; sourceTree = "<group>"; };
 		B6C8B8BE232B051D00718B58 /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
 		B6C8B8BF232B051D00718B58 /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
-		B6C8B8C1232B05B400718B58 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		B6C8B8C2232B05B400718B58 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		B6C8B8C4232B068800718B58 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B6C8B8C6232B083E00718B58 /* DataObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataObject.h; sourceTree = "<group>"; };
 		B6C8B8C7232B083E00718B58 /* DataObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataObject.m; sourceTree = "<group>"; };
@@ -74,16 +77,18 @@
 				B6C8B8C4232B068800718B58 /* main.m */,
 				B65B7FEF2328C455001FC23C /* AppDelegate.h */,
 				B65B7FF02328C455001FC23C /* AppDelegate.m */,
-				B6C8B8C1232B05B400718B58 /* HomeViewController.h */,
-				B6C8B8C2232B05B400718B58 /* HomeViewController.m */,
+				B6B85B73232C5C8C0007102F /* HomeViewController.h */,
+				B6B85B74232C5C8C0007102F /* HomeViewController.m */,
 				B6B85B6C232B29220007102F /* LogoViewController.h */,
 				B6B85B6D232B29220007102F /* LogoViewController.m */,
-				B6C8B8BE232B051D00718B58 /* DataViewController.h */,
-				B6C8B8BF232B051D00718B58 /* DataViewController.m */,
+				B6B85B6F232C157E0007102F /* DataModel.h */,
+				B6B85B70232C157E0007102F /* DataModel.m */,
 				B6C8B8C6232B083E00718B58 /* DataObject.h */,
 				B6C8B8C7232B083E00718B58 /* DataObject.m */,
-				B64A0F94232AE68100094655 /* MyTableViewClass.h */,
-				B64A0F95232AE68100094655 /* MyTableViewClass.m */,
+				B6B85B72232C5C8C0007102F /* MyTableViewClass.h */,
+				B6B85B75232C5C8C0007102F /* MyTableViewClass.m */,
+				B6C8B8BE232B051D00718B58 /* DataViewController.h */,
+				B6C8B8BF232B051D00718B58 /* DataViewController.m */,
 				B65B7FFD2328C456001FC23C /* Info.plist */,
 				B65B7FF82328C456001FC23C /* Assets.xcassets */,
 				B65B7FFA2328C456001FC23C /* LaunchScreen.storyboard */,
@@ -162,12 +167,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6C8B8C8232B083E00718B58 /* DataObject.m in Sources */,
+				B6B85B71232C157E0007102F /* DataModel.m in Sources */,
 				B65B7FF12328C455001FC23C /* AppDelegate.m in Sources */,
 				B6C8B8C0232B051D00718B58 /* DataViewController.m in Sources */,
-				B6C8B8C3232B05B400718B58 /* HomeViewController.m in Sources */,
+				B6B85B77232C5C8C0007102F /* MyTableViewClass.m in Sources */,
 				B6C8B8C5232B068800718B58 /* main.m in Sources */,
+				B6B85B76232C5C8C0007102F /* HomeViewController.m in Sources */,
 				B6B85B6E232B29220007102F /* LogoViewController.m in Sources */,
-				B64A0F96232AE68100094655 /* MyTableViewClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

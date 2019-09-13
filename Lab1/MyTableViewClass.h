@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MyTableViewClass : UITableView
+
+- (instancetype)init;
 
 @end
 

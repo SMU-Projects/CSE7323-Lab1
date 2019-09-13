@@ -8,7 +8,7 @@
 
 #import "HomeViewController.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UIButton *logoButton;
 @property (strong, nonatomic) IBOutlet MyTableViewClass *tableView;
@@ -19,32 +19,33 @@
 @implementation HomeViewController
 
 /*!
-    @brief Getter for logoImageView. Sets the logo on first call of this function.
- */
--(UIButton*)logoButton{
-    if (!_logoButton){
-        _logoButton = [UIButton alloc];
-    }
-    return _logoButton;
-}
-
-/*!
-    @brief Gets logo from logoImageView.
+ @brief Gets logo from logoImageView.
  */
 -(UIImage*)getLogo{
     return self.logoButton.currentImage;
 }
 
+///*!
+//    @brief Method call that occurs when the view has loaded.
+// */
+//- (void)viewDidLoad {
+//    [super viewDidLoad];
+//    // Do any additional setup after loading the view.
+//}
+
 /*!
-    @brief Method call that occurs when the view has loaded.
+ @brief Method call that occurs when the view has appeared. Loads MyTableViewClass object.
  */
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+-(void)viewDidAppear:(BOOL)animated{
+    //    self.tableView = [[MyTableViewClass alloc] init];
+    //
+    //
+    //    self.tableView.delegate = self;
+    //    self.tableView.dataSource = self;
 }
 
 /*!
-    @brief Method call that occurs when segmentedControl has a change in state. Changes the view to either Table or Collection.
+ @brief Method call that occurs when segmentedControl has a change in state. Changes the view to either Table or Collection.
  */
 - (IBAction)segmentedControlAction:(id)sender {
     if (self.segmentedControl.selectedSegmentIndex == 0){
@@ -54,6 +55,8 @@
     }
     
 }
+
+
 
 
 @end

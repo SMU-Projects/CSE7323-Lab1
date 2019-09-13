@@ -19,4 +19,7 @@
 @property (strong, nonatomic) NSNumber *importance;
 //@property (strong, nonatomic) UIImage *image;
 
+- (instancetype)init:(NSString*)title
+                    :(NSNumber*)importance;
+
 @end
