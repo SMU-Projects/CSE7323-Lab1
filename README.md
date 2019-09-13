@@ -29,7 +29,8 @@ Use lazy instantiation when possible
 
 ```
 Implement a modal view and handle properly using custom protocols/delegation
-Test your app running on the device, not the emulator to ensure it runs in all scenarios. Also see the grading rubric for how much each element is worth. 
+Test your app running on the device, not the emulator to ensure it runs in all scenarios. 
+Also see the grading rubric for how much each element is worth. 
 ```
 
 ### Turn in: 
