@@ -39,21 +39,22 @@ Test your app running on the device, not the emulator to ensure it runs in all s
 * A video of your working app
 
 ### Grading Rubric
-
-Coding Techniques	10
-MVC Paradigm	10
-Auto Layout	10
-Landscape Portrait	5
-Button	1
-Slider	1
-Label	1
-Stepper	1
-Switch	1
-Picker	5
-Proper Navigation	4
-Seg. Control	2
-Timer	4
-ScrollView	10
-Collection View	10
-Image View	5
-TableView	10
+|   Feature         |     Points     |
+|      :---:        |      :---:     |
+| Coding Techniques	| 10 			 |
+| MVC Paradigm		| 10 			 |
+| Auto Layout		| 10			 |
+| Landscape Portrait| 5  			 |
+| Button			| 1  			 |
+| Slider			| 1  			 |
+| Label				| 1 			 |
+| Stepper			| 1 			 |
+| Switch			| 1 			 |
+| Picker			| 5 			 |
+| Proper Navigation	| 4  			 |
+| Seg. Control		| 2 			 |
+| Timer				| 4  			 |
+| ScrollView		| 10 			 |
+| Collection View	| 10 			 |
+| Image View		| 5  			 |
+| TableView			| 10 |
