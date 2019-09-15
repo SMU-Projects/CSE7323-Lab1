@@ -11,12 +11,13 @@
 @interface DataViewController ()
 
 @property (strong, nonatomic) DataModel* myDataModel;
-//@property (weak, nonatomic) IBOutlet UILabel *title;
-//@property (weak, nonatomic) IBOutlet UIImageView *image;
-//@property (weak, nonatomic) IBOutlet UILabel *date;
-//@property (weak, nonatomic) IBOutlet UILabel *info;
-//@property (weak, nonatomic) IBOutlet UILabel *completionLabel;
-//@property (weak, nonatomic) IBOutlet UISwitch *completionSwitch;
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *completionLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *completionSwitch;
 
 @end
 
@@ -25,14 +26,21 @@
 -(DataModel*)myDataModel{
     
     if(!_myDataModel)
-        _myDataModel =[DataModel sharedInstance];
+        _myDataModel = [DataModel sharedInstance];
     
     return _myDataModel;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.nameLabel.text = self.object.name;
+    self.imageView.image = self.object.image;
+    self.dateLabel.text = [self.object getFormatedDate];
+    self.infoLabel.text = self.object.info;
+    self.completionSwitch.on = self.object.completion;
+}
+- (IBAction)completionSwitchAction:(id)sender {
+    self.object.completion = self.completionSwitch.on;
 }
 
 @end

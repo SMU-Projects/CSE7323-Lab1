@@ -10,6 +10,7 @@
 #import "DataModel.h"
 #import "TableViewCell.h"
 #import "NewTableViewCell.h"
+#import "DataViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

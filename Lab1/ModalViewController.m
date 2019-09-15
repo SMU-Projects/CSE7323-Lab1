@@ -33,6 +33,21 @@
     NSNumber* value = @(0);
     self.slider.value = value.floatValue;
     [self.sliderLabel setFont:[UIFont systemFontOfSize:value.doubleValue]];
+
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0
+                                                      target:self
+                                                    selector:@selector(changeViewBackgroundColor)
+                                                    userInfo:nil
+                                                     repeats:YES];
+}
+
+-(void)changeViewBackgroundColor{
+    if ([self.view.backgroundColor isEqual:[UIColor lightGrayColor]]){
+        self.view.backgroundColor = [UIColor whiteColor];
+    } else {
+        self.view.backgroundColor = [UIColor lightGrayColor];
+    }
+    
 }
 
 /*!

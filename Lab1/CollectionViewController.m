@@ -26,7 +26,7 @@ static NSString * const reuseIdentifier = @"Cell";
     return _myDataModel;
 }
 
-- (void)viewDidAppear:(BOOL)animated{
+-(void)viewWillAppear:(BOOL)animated{
     [self.collectionView reloadData];
 }
 
@@ -58,9 +58,12 @@ static NSString * const reuseIdentifier = @"Cell";
             cell = [nib objectAtIndex:0];
         }
         
-        cell.title.text = [[self.myDataModel getDataObjectWithNumber:indexPath.row] title];
-        cell.date.text = [[self.myDataModel getDataObjectWithNumber:indexPath.row] date];
-        cell.completion.image = [[self.myDataModel getDataObjectWithNumber:indexPath.row] completion];
+        DataObject* object = [self.myDataModel getDataObjectWithNumber:indexPath.row];
+        cell.object = object;
+        
+        cell.name.text = object.name;
+        cell.date.text = [object getFormatedDate];
+        cell.completion.image = [object getCompletionImage];
         
         cell.layer.borderWidth=1.0f;
         
@@ -87,35 +90,18 @@ static NSString * const reuseIdentifier = @"Cell";
     
 }
 
-#pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    BOOL isVC = [[segue destinationViewController] isKindOfClass:[DataViewController class]];
+    
+    if(isVC){
+        NSLog(@"Collection View Controller Segue to Data View Controller Occuring");
+        
+        CollectionViewCell* cell = (CollectionViewCell*)sender;
+        DataViewController *vc = [segue destinationViewController];
+        
+        vc.object = cell.object;
+        
+    }
 }
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end

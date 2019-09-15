@@ -7,15 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *info;
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UIImageView *completion;
+
+@property (weak, nonatomic) IBOutlet DataObject *object;
 
 @end
 

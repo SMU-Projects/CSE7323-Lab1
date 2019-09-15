@@ -11,33 +11,33 @@
 
 @interface DataObject : NSObject
 
-@property (strong, nonatomic) IBOutlet NSString *title;
+@property (strong, nonatomic) IBOutlet NSString *name;
 @property (strong, nonatomic) IBOutlet NSString *info;
 @property (strong, nonatomic) IBOutlet NSDate *date;
 @property (strong, nonatomic) IBOutlet UIImage *image;
-@property (strong, nonatomic) IBOutlet NSNumber *completion;
+@property (nonatomic, assign) BOOL completion;
 
 //@property (strong, nonatomic) IBOutlet UIColor *color;
 @property (strong, nonatomic) IBOutlet NSNumber *importance;
 
 
 
-- (instancetype)init:(NSString*)title
+- (instancetype)init:(NSString*)name
                     :(NSString*)info
                     :(NSDate*)date
-//                    :(UIImage*)image
-//                    :(UIColor*)color
-                    :(NSNumber*)importance;
+                    :(NSNumber*)importance
+                    :(UIImage*)image;
 
--(NSString*)title;
+
+-(NSString*)name;
 -(NSString*)info;
--(NSString*)date;
+-(NSDate*)date;
 -(UIImage*)image;
--(UIImage*)completion;
-//-(UIColor*)color;
+-(BOOL)completion;
 -(NSNumber*)importance;
 
--(void)isCompleted;
+-(UIImage*)getCompletionImage;
+-(NSString*)getFormatedDate;
 
 
 @end

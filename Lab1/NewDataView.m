@@ -8,15 +8,18 @@
 
 #import "NewDataView.h"
 
-@interface NewDataView ()
+@interface NewDataView () <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UITextField *infoTextField;
 @property (weak, nonatomic) IBOutlet UIStepper *importanceStepper;
-@property (weak, nonatomic) IBOutlet UILabel *stepperValue;
+@property (weak, nonatomic) IBOutlet UILabel *stepperLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *coolSwitch;
 @property (weak, nonatomic) IBOutlet UIButton *createCellButton;
+
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
 
 @property (strong, nonatomic) DataModel* myDataModel;
 
@@ -32,22 +35,49 @@
     return _myDataModel;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.nameTextField.delegate = self;
+    self.infoTextField.delegate = self;
 }
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return true;
+}
+
+- (IBAction)didTapMainView:(id)sender {
+//    [self.nameTextField resignFirstResponder];
+//    [self.infoTextField resignFirstResponder];
+}
+
+- (IBAction)importanceSteppertepperAction:(id)sender {
+    self.stepperLabel.text = [@([self.importanceStepper value]) stringValue];
+}
+
 
 - (IBAction)newCellButtonAction:(id)sender {
+    NSString* name = [self.nameTextField text];
+    if([name isEqual: @""]){
+        self.nameLabel.text = @"Title   X";
+        self.nameLabel.textColor = [UIColor redColor];
+        return;
+    }
     
-    DataObject* object = [[DataObject alloc] init:@"Test"
-                                                  :@"Test"
-                                                  :[NSDate date]
-                                                  :@(1) ];
+    NSDate* date = [self.datePicker date];
+    NSString* info = [self.infoTextField text];
+    NSNumber* importance = @([self.importanceStepper value]);
+    UIImage* image;
+    if (self.coolSwitch.on){
+        image = [UIImage imageNamed:@"Logo"];
+    } else {
+        image = [UIImage imageNamed:@"Derp"];
+    }
+    
+    DataObject* object = [[DataObject alloc] init:name :info :date :importance :image];
     
     [self.myDataModel addNewDataObject:object];
-//    [self.navigationController popToRootViewControllerAnimated:YES];
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 
 @end

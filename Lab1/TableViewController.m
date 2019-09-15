@@ -24,7 +24,7 @@
     return _myDataModel;
 }
 
--(void) viewDidAppear:(BOOL)animated{
+-(void)viewWillAppear:(BOOL)animated{
     [self.tableView reloadData];
 }
 
@@ -58,16 +58,14 @@
             cell = [nib objectAtIndex:0];
         }
         
-        NSString* tempTitle = [[self.myDataModel getDataObjectWithNumber:indexPath.row] title];
-        NSString* tempInfo = [[self.myDataModel getDataObjectWithNumber:indexPath.row] info];
+        DataObject* object = [self.myDataModel getDataObjectWithNumber:indexPath.row];
+        cell.object = object;
         
-        
-        
-        cell.title.text = tempTitle;
-        cell.info.text = tempInfo;
-        cell.date.text = [[self.myDataModel getDataObjectWithNumber:indexPath.row] date];
-        cell.image.image = [[self.myDataModel getDataObjectWithNumber:indexPath.row] image];
-        cell.completion.image = [[self.myDataModel getDataObjectWithNumber:indexPath.row] completion];
+        cell.name.text = object.name;
+        cell.info.text = object.info;
+        cell.date.text = [object getFormatedDate];
+        cell.image.image = object.image;
+        cell.completion.image = [object getCompletionImage];
         
         return cell;
         
@@ -87,49 +85,19 @@
     }
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    BOOL isVC = [[segue destinationViewController] isKindOfClass:[DataViewController class]];
+    
+    if(isVC){
+        NSLog(@"Table View Controller Segue to Data View Controller Occuring");
+        
+        TableViewCell* cell = (TableViewCell*)sender;
+        DataViewController *vc = [segue destinationViewController];
+        
+        vc.object = cell.object;
+        
+    }
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

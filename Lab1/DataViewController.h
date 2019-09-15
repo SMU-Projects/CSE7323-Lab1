@@ -12,6 +12,7 @@
 //NS_ASSUME_NONNULL_BEGIN
 
 @interface DataViewController : UIViewController
+@property (strong, nonatomic) IBOutlet DataObject *object;
 
 @end
 

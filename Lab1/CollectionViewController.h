@@ -10,6 +10,7 @@
 #import "DataModel.h"
 #import "CollectionViewCell.h"
 #import "NewCollectionViewCell.h"
+#import "DataViewController.h";
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -37,22 +37,21 @@
         DataObject* object1 = [[DataObject alloc] init:@"HW: Lab 1"
                                                       :@"Mobile Sensing"
                                                       :[NSDate date]
-                                                      :@(10) ];
+                                                      :@(10)
+                                                      :[UIImage imageNamed:@"Derp"]];
         
         DataObject* object2 = [[DataObject alloc] init:@"HW: Watch Video Lecture"
                                                       :@"Computer Architecture; This assignment is due Tuesday"
                                                       :[NSDate date]
-                                                      :@(2) ];
+                                                      :@(2)
+                                                      :[UIImage imageNamed:@"Derp"]];
         
         DataObject* object3 = [[DataObject alloc] init:@"I miss you Roger Wong"
                                                       :@""
                                                       :[NSDate date]
-                                                      :@(1) ];
+                                                      :@(1)
+                                                      :[UIImage imageNamed:@"Logo"]];
         
-        [object1 isCompleted];
-        object3.image = [UIImage imageNamed:@"Logo"];
-        
-    
         _dataObjects = [[NSMutableArray alloc] init];
         [_dataObjects addObject:object1];
         [_dataObjects addObject:object2];
