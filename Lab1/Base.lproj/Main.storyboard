@@ -466,20 +466,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Derp0" translatesAutoresizingMaskIntoConstraints="NO" id="bZ5-M6-c8c">
-                                <rect key="frame" x="264" y="138" width="120" height="130"/>
+                                <rect key="frame" x="264" y="113" width="120" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="IUF-aK-8Pz"/>
                                     <constraint firstAttribute="width" constant="120" id="NMt-ci-dGL"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date is Sept 15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Crw-FO-1gG">
-                                <rect key="frame" x="129" y="298" width="156" height="29"/>
+                                <rect key="frame" x="129" y="273" width="156" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tah-ck-l2H">
-                                <rect key="frame" x="57" y="357" width="300" height="203"/>
+                                <rect key="frame" x="57" y="332" width="300" height="203"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="385-gl-p0O"/>
                                 </constraints>
@@ -491,13 +491,13 @@ Duo enim causae nonumes et, hinc torquatos no vel. Ea his minim instructior comp
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is task completed?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1D-iR-Wta">
-                                <rect key="frame" x="90" y="610" width="144" height="21"/>
+                                <rect key="frame" x="90" y="585" width="144" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="e9R-Of-bUv">
-                                <rect key="frame" x="274" y="605" width="51" height="31"/>
+                                <rect key="frame" x="274" y="580" width="51" height="31"/>
                                 <color key="onTintColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="completionSwitchAction:" destination="CIG-kN-thE" eventType="valueChanged" id="bao-5g-eDp"/>
@@ -522,7 +522,7 @@ Duo enim causae nonumes et, hinc torquatos no vel. Ea his minim instructior comp
                             <constraint firstItem="e9R-Of-bUv" firstAttribute="top" secondItem="Tah-ck-l2H" secondAttribute="bottom" constant="45" id="NMn-gz-RUU"/>
                             <constraint firstItem="e9R-Of-bUv" firstAttribute="leading" secondItem="p1D-iR-Wta" secondAttribute="trailing" constant="40" id="Qd4-1G-h8q"/>
                             <constraint firstItem="p1D-iR-Wta" firstAttribute="top" secondItem="Tah-ck-l2H" secondAttribute="bottom" constant="50" id="RGq-QZ-UMt"/>
-                            <constraint firstItem="bZ5-M6-c8c" firstAttribute="top" secondItem="2iQ-LA-Wnt" secondAttribute="top" constant="50" id="ccJ-DD-TKC"/>
+                            <constraint firstItem="bZ5-M6-c8c" firstAttribute="top" secondItem="2iQ-LA-Wnt" secondAttribute="top" constant="25" id="ccJ-DD-TKC"/>
                             <constraint firstItem="h6W-lS-VWb" firstAttribute="top" secondItem="2iQ-LA-Wnt" secondAttribute="top" constant="50" id="t0x-fP-Y7w"/>
                             <constraint firstItem="Crw-FO-1gG" firstAttribute="centerX" secondItem="urY-aj-snF" secondAttribute="centerX" id="uWO-S9-qDa"/>
                             <constraint firstItem="Tah-ck-l2H" firstAttribute="top" secondItem="Crw-FO-1gG" secondAttribute="bottom" constant="30" id="xnQ-9c-r6K"/>
