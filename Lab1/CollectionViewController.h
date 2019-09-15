@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataModel.h"
+#import "CollectionViewCell.h"
+#import "NewCollectionViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

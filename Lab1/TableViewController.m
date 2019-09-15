@@ -24,14 +24,8 @@
     return _myDataModel;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+-(void) viewDidAppear:(BOOL)animated{
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -42,7 +36,6 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 2;
 }
 
@@ -65,9 +58,14 @@
             cell = [nib objectAtIndex:0];
         }
         
-        cell.title.text = [[self.myDataModel getDataObjectWithNumber:indexPath.row] title];
-        cell.info.text = [[self.myDataModel getDataObjectWithNumber:indexPath.row] info];
-        cell.dataTime.text = [[self.myDataModel getDataObjectWithNumber:indexPath.row] dateTime];
+        NSString* tempTitle = [[self.myDataModel getDataObjectWithNumber:indexPath.row] title];
+        NSString* tempInfo = [[self.myDataModel getDataObjectWithNumber:indexPath.row] info];
+        
+        
+        
+        cell.title.text = tempTitle;
+        cell.info.text = tempInfo;
+        cell.date.text = [[self.myDataModel getDataObjectWithNumber:indexPath.row] date];
         cell.image.image = [[self.myDataModel getDataObjectWithNumber:indexPath.row] image];
         cell.completion.image = [[self.myDataModel getDataObjectWithNumber:indexPath.row] completion];
         

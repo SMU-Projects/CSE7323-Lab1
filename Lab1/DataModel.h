@@ -17,4 +17,6 @@
 
 -(DataObject*)getDataObjectWithNumber:(NSInteger)index;
 
+-(void)addNewDataObject:(DataObject*)object;
+
 @end

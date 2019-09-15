@@ -10,53 +10,81 @@
 
 @interface CollectionViewController ()
 
+@property (strong, nonatomic) DataModel* myDataModel;
+
 @end
 
 @implementation CollectionViewController
 
 static NSString * const reuseIdentifier = @"Cell";
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(DataModel*)myDataModel{
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
+    if(!_myDataModel)
+        _myDataModel =[DataModel sharedInstance];
     
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
+    return _myDataModel;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewDidAppear:(BOOL)animated{
+    [self.collectionView reloadData];
 }
-*/
 
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 2;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
+    if(section == 0){
+        return [self.myDataModel getDataObjectsSize];
+    }
+    return 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    // Configure the cell
+    if(indexPath.section == 0){
+        NSString *collectionString = @"CollectionViewCell";
+        
+        
+        CollectionViewCell *cell = (CollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:collectionString forIndexPath:indexPath];
+        
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:collectionString owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
+        cell.title.text = [[self.myDataModel getDataObjectWithNumber:indexPath.row] title];
+        cell.date.text = [[self.myDataModel getDataObjectWithNumber:indexPath.row] date];
+        cell.completion.image = [[self.myDataModel getDataObjectWithNumber:indexPath.row] completion];
+        
+        cell.layer.borderWidth=1.0f;
+        
+        return cell;
+        
+    } else {
+        NSString *collectionString = @"NewCollectionViewCell";
+        
+        
+        NewCollectionViewCell *cell = (NewCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:collectionString forIndexPath:indexPath];
+        
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:collectionString owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
+        cell.label.textColor = [UIColor blueColor];
+        
+        cell.layer.borderWidth=1.0f;
+        
+        return cell;
+    }
     
-    return cell;
 }
 
 #pragma mark <UICollectionViewDelegate>

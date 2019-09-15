@@ -15,14 +15,14 @@
  */
 - (instancetype)init:(NSString*)title
                     :(NSString*)info
-                    :(NSDate*)dateTime
+                    :(NSDate*)date
 //                    :(UIImage*)image
 //                    :(UIColor*)color
                     :(NSNumber*)importance;{
     
     self.title = title;
     self.info = info;
-    self.dateTime = dateTime;
+    self.date = date;
 //    self.image = image;
 //    self.color = color
     self.importance = importance;
@@ -53,24 +53,21 @@
 /*!
     @brief Getter for dateTime property as a NSString.
  */
--(NSString*)dateTime{
-    if(!_dateTime){
-        _dateTime = [NSDate date];
+-(NSString*)date{
+    if(!_date){
+        _date = [NSDate date];
     }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     
-    return [dateFormatter stringFromDate:_dateTime];
+    return [dateFormatter stringFromDate:_date];
 }
 
 /*!
     @brief Getter for image property.
  */
 -(UIImage*)image{
-    if(!_image){
-        _image = [UIImage imageNamed:@"Derp"];
-    }
     return _image;
 }
 
@@ -82,11 +79,11 @@
         _completion = @(0);
     }
     
-    if([_completion isEqual:(@(0))])
+    if([_completion intValue] == 1)
     {
-        return [UIImage imageNamed:@"Logo"];;
+        return [UIImage imageNamed:@"completed_yes"];;
     }
-    return [UIImage imageNamed:@"Derp"];;
+    return [UIImage imageNamed:@"completed_no"];;
 }
 
 ///*!
@@ -107,6 +104,10 @@
         _importance = @(0);
     }
     return _importance;
+}
+
+-(void)isCompleted{
+    self.completion = @(1);
 }
 
 @end

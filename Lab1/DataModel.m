@@ -34,20 +34,23 @@
 -(NSMutableArray*)dataObjects{
     if(!_dataObjects){
         
-        DataObject* object1 = [[DataObject alloc] init:@"Title1"
-                                                      :@"Information1"
+        DataObject* object1 = [[DataObject alloc] init:@"HW: Lab 1"
+                                                      :@"Mobile Sensing"
+                                                      :[NSDate date]
+                                                      :@(10) ];
+        
+        DataObject* object2 = [[DataObject alloc] init:@"HW: Watch Video Lecture"
+                                                      :@"Computer Architecture; This assignment is due Tuesday"
+                                                      :[NSDate date]
+                                                      :@(2) ];
+        
+        DataObject* object3 = [[DataObject alloc] init:@"I miss you Roger Wong"
+                                                      :@""
                                                       :[NSDate date]
                                                       :@(1) ];
         
-        DataObject* object2 = [[DataObject alloc] init:@"Title2"
-                                                      :@"Information2"
-                                                      :[NSDate date]
-                                                      :@(1) ];
-        
-        DataObject* object3 = [[DataObject alloc] init:@"Title3"
-                                                      :@"Information3"
-                                                      :[NSDate date]
-                                                      :@(1) ];
+        [object1 isCompleted];
+        object3.image = [UIImage imageNamed:@"Logo"];
         
     
         _dataObjects = [[NSMutableArray alloc] init];
@@ -66,6 +69,10 @@
 -(DataObject*)getDataObjectWithNumber:(NSInteger)index
 {
     return (self.dataObjects[index]);
+}
+
+-(void)addNewDataObject:(DataObject*)object{
+    [_dataObjects addObject:object];
 }
 
 

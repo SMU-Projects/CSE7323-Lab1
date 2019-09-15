@@ -13,7 +13,7 @@
 
 @property (strong, nonatomic) IBOutlet NSString *title;
 @property (strong, nonatomic) IBOutlet NSString *info;
-@property (strong, nonatomic) IBOutlet NSDate *dateTime;
+@property (strong, nonatomic) IBOutlet NSDate *date;
 @property (strong, nonatomic) IBOutlet UIImage *image;
 @property (strong, nonatomic) IBOutlet NSNumber *completion;
 
@@ -24,18 +24,20 @@
 
 - (instancetype)init:(NSString*)title
                     :(NSString*)info
-                    :(NSDate*)dateTime
+                    :(NSDate*)date
 //                    :(UIImage*)image
 //                    :(UIColor*)color
                     :(NSNumber*)importance;
 
 -(NSString*)title;
 -(NSString*)info;
--(NSString*)dateTime;
+-(NSString*)date;
 -(UIImage*)image;
 -(UIImage*)completion;
 //-(UIColor*)color;
 -(NSNumber*)importance;
+
+-(void)isCompleted;
 
 
 @end
