@@ -16,6 +16,9 @@
 
 @implementation TableViewController
 
+/*!
+    @brief declares myDataModel as a shared instance.
+ */
 -(DataModel*)myDataModel{
     
     if(!_myDataModel)
@@ -24,21 +27,33 @@
     return _myDataModel;
 }
 
+/*!
+    @brief Method call that occurs right before view has appeared. Reloads dataView.
+ */
 -(void)viewWillAppear:(BOOL)animated{
     [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
 
+/*!
+    @brief sets the height of the cells.
+ */
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 120;
 }
 
+/*!
+    @brief Sets the number of sections in the tableView.
+ */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
 
+/*!
+    @brief Returns the number of cells in a particular section.
+ */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if(section == 0){
         return [self.myDataModel getDataObjectsSize];
@@ -46,6 +61,9 @@
     return 1;
 }
 
+/*!
+    @brief creates corresponding cell given the section or indexPath.row.
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if(indexPath.section == 0){
@@ -85,6 +103,9 @@
     }
 }
 
+/*!
+    @brief Method call before segue. If segue is to DataViewController, pass the DataObject.
+ */
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     BOOL isVC = [[segue destinationViewController] isKindOfClass:[DataViewController class]];

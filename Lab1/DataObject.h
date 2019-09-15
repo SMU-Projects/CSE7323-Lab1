@@ -17,7 +17,6 @@
 @property (strong, nonatomic) IBOutlet UIImage *image;
 @property (nonatomic, assign) BOOL completion;
 
-//@property (strong, nonatomic) IBOutlet UIColor *color;
 @property (strong, nonatomic) IBOutlet NSNumber *importance;
 
 

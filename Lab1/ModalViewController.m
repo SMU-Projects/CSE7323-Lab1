@@ -23,7 +23,7 @@
 @implementation ModalViewController
 
 /*!
-    @brief Method call that occurs when the view has loaded.
+    @brief Method call that occurs when the view has loaded. Starts timer and sets labels.
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,6 +38,9 @@
                                                  repeats:YES];
 }
 
+/*!
+    @brief getter for indexPointer property.
+ */
 -(NSNumber*)indexPointer{
     if(!_indexPointer){
         _indexPointer = @(0);
@@ -45,6 +48,9 @@
     return _indexPointer;
 }
 
+/*!
+    @brief getter for indexPointerDirection property.
+ */
 -(NSNumber*)indexPointerDirection{
     if(!_indexPointerDirection){
         _indexPointerDirection = @(1);
@@ -52,6 +58,9 @@
     return _indexPointerDirection;
 }
 
+/*!
+    @brief changes animationImage every timer interval. Plays an animation.
+ */
 -(void)playAnimation{
     int index = [self.indexPointer intValue];
     int direction = [self.indexPointerDirection intValue];

@@ -25,7 +25,6 @@
     self.scrollView.contentSize = self.logoImageView.image.size;
     self.scrollView.minimumZoomScale = 0.5;
     self.scrollView.delegate = self;
-    // Do any additional setup after loading the view.
 }
 
 /*!

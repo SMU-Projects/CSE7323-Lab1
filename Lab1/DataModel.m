@@ -31,6 +31,9 @@
     return _sharedInstance;
 }
 
+/*!
+    @brief Getter for dataObjects.
+ */
 -(NSMutableArray*)dataObjects{
     if(!_dataObjects){
         
@@ -60,20 +63,32 @@
     return _dataObjects;
 }
 
+/*!
+    @brief gets the size of dataObjects as an NSInteger.
+ */
 -(NSInteger)getDataObjectsSize{
     NSNumber* size = @(self.dataObjects.count);
     return [size integerValue];
 }
 
+/*!
+    @brief gets a reference to a dataObject within dataObjects by using an NSinteger index.
+ */
 -(DataObject*)getDataObjectWithNumber:(NSInteger)index
 {
     return (self.dataObjects[index]);
 }
 
+/*!
+    @brief adds a new dataObject to the NSMutableArray dataObjects.
+ */
 -(void)addNewDataObject:(DataObject*)object{
-    [_dataObjects addObject:object];
+    [self.dataObjects addObject:object];
 }
 
+/*!
+    @brief sorts the NSMutableArray dataObjects. First sorts by DataObject.completion and then by DataObject.importance.
+ */
 -(void)sortDataObjects{
     // This isn't really great practice... but a selection sort is just so easy to write...
     for (int i=0; i < self.dataObjects.count-1; i++) {
@@ -91,8 +106,6 @@
         self.dataObjects[i] = self.dataObjects[swapIndex];
         self.dataObjects[swapIndex] = temp;
     }
-    
 }
-
 
 @end

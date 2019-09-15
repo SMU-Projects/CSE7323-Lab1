@@ -23,6 +23,9 @@
 
 @implementation DataViewController
 
+/*!
+    @brief declares myDataModel as a shared instance.
+ */
 -(DataModel*)myDataModel{
     
     if(!_myDataModel)
@@ -31,6 +34,9 @@
     return _myDataModel;
 }
 
+/*!
+    @brief Method call that occurs when the view has loaded. Loads view.
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.nameLabel.text = self.object.name;
@@ -39,6 +45,10 @@
     self.infoLabel.text = self.object.info;
     self.completionSwitch.on = self.object.completion;
 }
+
+/*!
+    @brief Method call that occurs when switch action occurs. Changes corresponding dataObject and then sorts myDataModel.dataObjects.
+ */
 - (IBAction)completionSwitchAction:(id)sender {
     self.object.completion = self.completionSwitch.on;
     [self.myDataModel sortDataObjects];

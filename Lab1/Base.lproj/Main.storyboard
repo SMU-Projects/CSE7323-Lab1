@@ -142,7 +142,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Knc-2a-BYC">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Knc-2a-BYC">
                                 <rect key="frame" x="98.5" y="284" width="217" height="552"/>
                                 <segments>
                                     <segment title="Table View"/>
@@ -184,8 +184,8 @@
                                     <segue destination="iNp-uJ-Kfg" kind="show" id="eyR-Pi-rrL"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TableImage" translatesAutoresizingMaskIntoConstraints="NO" id="cMw-y5-gDe">
-                                <rect key="frame" x="0.0" y="880" width="414" height="16"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="TableImage" translatesAutoresizingMaskIntoConstraints="NO" id="cMw-y5-gDe">
+                                <rect key="frame" x="0.0" y="880" width="414.00000000000011" height="16"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -670,15 +670,9 @@ Duo enim causae nonumes et, hinc torquatos no vel. Ea his minim instructior comp
                         <outlet property="nameLabel" destination="guZ-7R-vd2" id="Vtf-l5-EOg"/>
                         <outlet property="nameTextField" destination="jjc-Vq-ZdQ" id="Fhm-6P-dgI"/>
                         <outlet property="stepperLabel" destination="DEQ-DU-G8y" id="lFg-Pz-eol"/>
-                        <outlet property="tapGestureRecognizer" destination="Mhl-pc-04K" id="1hQ-se-iM2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m00-60-xNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Mhl-pc-04K">
-                    <connections>
-                        <action selector="didTapMainView:" destination="Ggf-ce-vOt" id="uPj-uw-vJV"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1511.5942028985507" y="1691.5178571428571"/>
         </scene>

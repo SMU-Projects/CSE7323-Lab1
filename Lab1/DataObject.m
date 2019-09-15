@@ -29,7 +29,7 @@
 }
 
 /*!
-    @brief Getter for title property.
+    @brief Getter for name property.
  */
 -(NSString*)name{
     if(!_name){
@@ -49,7 +49,7 @@
 }
 
 /*!
-    @brief Getter for dateTime property as a NSString.
+    @brief Getter for dateTime property.
  */
 -(NSDate*)date{
     if(!_date){
@@ -66,7 +66,7 @@
 }
 
 /*!
-    @brief Getter for completion property as an image.
+    @brief Getter for completion property.
  */
 -(BOOL)completion{
     if(!_completion){
@@ -85,6 +85,9 @@
     return _importance;
 }
 
+/*!
+    @brief gets the image associated with an uncompleted or completed dataObject.
+ */
 -(UIImage*)getCompletionImage{
     if(self.completion == YES)
     {
@@ -93,6 +96,9 @@
     return [UIImage imageNamed:@"completed_no"];
 }
 
+/*!
+    @brief gets the dataObject date but as a NSString.
+ */
 -(NSString*)getFormatedDate{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];

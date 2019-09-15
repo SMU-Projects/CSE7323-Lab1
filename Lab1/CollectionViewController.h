@@ -12,10 +12,6 @@
 #import "NewCollectionViewCell.h"
 #import "DataViewController.h";
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface CollectionViewController : UICollectionViewController
 
 @end
-
-NS_ASSUME_NONNULL_END

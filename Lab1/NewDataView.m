@@ -19,14 +19,15 @@
 @property (weak, nonatomic) IBOutlet UISwitch *coolSwitch;
 @property (weak, nonatomic) IBOutlet UIButton *createCellButton;
 
-@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
-
 @property (strong, nonatomic) DataModel* myDataModel;
 
 @end
 
 @implementation NewDataView
 
+/*!
+    @brief declares myDataModel as a shared instance.
+ */
 -(DataModel*)myDataModel{
     
     if(!_myDataModel)
@@ -35,27 +36,33 @@
     return _myDataModel;
 }
 
+/*!
+    @brief Method call that occurs after view has loaded. Assigns delegates.
+ */
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.nameTextField.delegate = self;
     self.infoTextField.delegate = self;
 }
 
+/*!
+    @brief Method call that occurs when user presses the textField return key. Resigns the keyboard.
+ */
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return true;
 }
 
-- (IBAction)didTapMainView:(id)sender {
-//    [self.nameTextField resignFirstResponder];
-//    [self.infoTextField resignFirstResponder];
-}
-
+/*!
+    @brief Method call that occurs when the stepper action has occured. Increments stepperLabel.text.
+ */
 - (IBAction)importanceSteppertepperAction:(id)sender {
     self.stepperLabel.text = [@([self.importanceStepper value]) stringValue];
 }
 
-
+/*!
+    @brief Method call that occurs when the button action has occured. Before creating a new cell, there is first a check to see if the user has entered a name for the cell.
+ */
 - (IBAction)newCellButtonAction:(id)sender {
     NSString* name = [self.nameTextField text];
     if([name isEqual: @""]){
