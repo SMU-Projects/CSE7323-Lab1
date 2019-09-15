@@ -33,12 +33,27 @@
 
 -(NSMutableArray*)dataObjects{
     if(!_dataObjects){
-        DataObject* object1 = [[DataObject alloc] init:@"Will1" :@1];
-        DataObject* object2 = [[DataObject alloc] init:@"Will2" :@2];
+        
+        DataObject* object1 = [[DataObject alloc] init:@"Title1"
+                                                      :@"Information1"
+                                                      :[NSDate date]
+                                                      :@(1) ];
+        
+        DataObject* object2 = [[DataObject alloc] init:@"Title2"
+                                                      :@"Information2"
+                                                      :[NSDate date]
+                                                      :@(1) ];
+        
+        DataObject* object3 = [[DataObject alloc] init:@"Title3"
+                                                      :@"Information3"
+                                                      :[NSDate date]
+                                                      :@(1) ];
+        
+    
         _dataObjects = [[NSMutableArray alloc] init];
         [_dataObjects addObject:object1];
         [_dataObjects addObject:object2];
-        NSLog(@"DataModel has %zd elements in its mutable array", [self getDataObjectsSize ]);
+        [_dataObjects addObject:object3];
     }
     return _dataObjects;
 }

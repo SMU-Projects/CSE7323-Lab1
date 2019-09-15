@@ -11,8 +11,10 @@
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UIButton *logoButton;
-@property (strong, nonatomic) IBOutlet MyTableViewClass *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+//@property (strong, nonatomic) IBOutlet MyTableViewClass *tableView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (weak, nonatomic) IBOutlet UIImageView *fakeTableImage;
 
 @end
 
@@ -25,53 +27,90 @@
     return self.logoButton.currentImage;
 }
 
-///*!
-//    @brief Method call that occurs when the view has loaded.
-// */
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//    // Do any additional setup after loading the view.
-//}
-
-/*!
- @brief Method call that occurs when the view has appeared. Loads MyTableViewClass object.
- */
--(void)viewDidAppear:(BOOL)animated{
-    //    self.tableView = [[MyTableViewClass alloc] init];
-    //
-    //
-    //    self.tableView.delegate = self;
-    //    self.tableView.dataSource = self;
-}
-
 /*!
  @brief Method call that occurs when segmentedControl has a change in state. Changes the view to either Table or Collection.
  */
 - (IBAction)segmentedControlAction:(id)sender {
     if (self.segmentedControl.selectedSegmentIndex == 0){
         NSLog(@"Segmented Control is Table View");
+        self.fakeTableImage.image = [UIImage imageNamed:@"TableImage"];
     } else {
         NSLog(@"Segmented Control is Connection View");
+        self.fakeTableImage.image = [UIImage imageNamed:@"CollectionImage"];
     }
-    
 }
 
 
 
+/*!
+    @brief Method call that occurs when the view has loaded.
+ */
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+//    [self.tableView registerClass:(UITableViewCell.self) forCellReuseIdentifier:(@"cell")];
+}
+
+//#pragma mark - Table View Functions
+//
+//- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+//
+//    UITableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:(@"cell")];
+//    cell.textLabel.text = @"hello";
+//    return cell;
+//}
+//
+//- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return 3;
+//}
+//
+//-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//{
+//    return 1;
+//}
+
+//- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
+//    <#code#>
+//}
+//
+//- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection {
+//    <#code#>
+//}
+//
+//- (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
+//    <#code#>
+//}
+//
+//- (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
+//    <#code#>
+//}
+
+//- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
+//    <#code#>
+//}
+//
+//- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
+//    <#code#>
+//}
+//
+//- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
+//    <#code#>
+//}
+//
+//- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator {
+//    <#code#>
+//}
+//
+//- (void)setNeedsFocusUpdate {
+//    <#code#>
+//}
+//
+//- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context {
+//    <#code#>
+//}
+//
+//- (void)updateFocusIfNeeded {
+//    <#code#>
+//}
 
 @end
-
-
-/*!
- 
- THIS IS AN EXAMPLE PLEASE DELETE BEFORE TURN IN, WILL, MY MAN.
- @brief It converts temperature degrees from Fahrenheit to Celsius scale.
- 
- @discussion This method accepts a float value representing the temperature in <b>Fahrenheit</b> scale and it converts it to the <i>Celsius</i> scale.
- 
- To use it, simply call @c[self toCelsius: 50];
- 
- @param  fromFahrenheit The input value representing the degrees in the Fahrenheit scale.
- 
- @return float The degrees in the Celsius scale.
- */
