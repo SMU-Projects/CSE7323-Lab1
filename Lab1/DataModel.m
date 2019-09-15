@@ -37,17 +37,18 @@
 -(NSMutableArray*)dataObjects{
     if(!_dataObjects){
         
-        DataObject* object1 = [[DataObject alloc] init:@"HW: Lab 1"
+        DataObject* object1 = [[DataObject alloc] init:@"HW: Watch Video Lecture"
+                                                      :@"Computer Architecture; This assignment is due Tuesday and holy wow I wish it was due later because I don't have time for this stuff."
+                                                      :[NSDate date]
+                                                      :@(0)
+                                                      :[UIImage imageNamed:@"Derp0"]];
+        
+        DataObject* object2 = [[DataObject alloc] init:@"HW: Lab 1"
                                                       :@"Mobile Sensing Lab: Sink or Swim... Honestly, I ain't tryin' to sink here."
                                                       :[NSDate date]
                                                       :@(0)
                                                       :[UIImage imageNamed:@"Derp0"]];
         
-        DataObject* object2 = [[DataObject alloc] init:@"HW: Watch Video Lecture"
-                                                      :@"Computer Architecture; This assignment is due Tuesday and holy wow I wish it was due later because I don't have time for this stuff."
-                                                      :[NSDate date]
-                                                      :@(0)
-                                                      :[UIImage imageNamed:@"Derp0"]];
         
         DataObject* object3 = [[DataObject alloc] init:@"I miss you Roger Wong"
                                                       :@"I'll never forget you pal..."

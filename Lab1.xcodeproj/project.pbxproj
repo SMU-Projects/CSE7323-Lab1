@@ -96,7 +96,9 @@
 		B65B7FEE2328C455001FC23C /* Lab1 */ = {
 			isa = PBXGroup;
 			children = (
+				B65B7FFA2328C456001FC23C /* LaunchScreen.storyboard */,
 				B65B7FF52328C455001FC23C /* Main.storyboard */,
+				B65B7FFD2328C456001FC23C /* Info.plist */,
 				B6C8B8C4232B068800718B58 /* main.m */,
 				B65B7FEF2328C455001FC23C /* AppDelegate.h */,
 				B65B7FF02328C455001FC23C /* AppDelegate.m */,
@@ -126,10 +128,8 @@
 				B6B54880232E114400EBE079 /* NewDataView.m */,
 				B60D28CA232D43ED00DB10E9 /* ModalViewController.h */,
 				B60D28CB232D43ED00DB10E9 /* ModalViewController.m */,
-				B65B7FFD2328C456001FC23C /* Info.plist */,
 				B6B6E1A0232ED9A50038B18B /* App-Logo.png */,
 				B65B7FF82328C456001FC23C /* Assets.xcassets */,
-				B65B7FFA2328C456001FC23C /* LaunchScreen.storyboard */,
 			);
 			path = Lab1;
 			sourceTree = "<group>";
