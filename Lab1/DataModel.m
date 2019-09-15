@@ -98,7 +98,7 @@
             if (![self.dataObjects[swapIndex] completion]){
                 if([self.dataObjects[j] completion]){
                     swapIndex = j;
-                } else if([self.dataObjects[j] importance] > [self.dataObjects[swapIndex] importance]){
+                } else if([[self.dataObjects[j] importance] doubleValue] > [[self.dataObjects[swapIndex] importance] doubleValue]){
                     swapIndex = j;
                 }
             }
