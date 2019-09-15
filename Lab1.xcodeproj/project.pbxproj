@@ -15,6 +15,7 @@
 		B6B5487B232DF15D00EBE079 /* NewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B5487A232DF15D00EBE079 /* NewTableViewCell.m */; };
 		B6B5487E232E0F2900EBE079 /* NewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B5487D232E0F2900EBE079 /* NewCollectionViewCell.m */; };
 		B6B54881232E114400EBE079 /* NewDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B54880232E114400EBE079 /* NewDataView.m */; };
+		B6B6E1A1232ED9A50038B18B /* App-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B6B6E1A0232ED9A50038B18B /* App-Logo.png */; };
 		B6B85B6E232B29220007102F /* LogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B85B6D232B29220007102F /* LogoViewController.m */; };
 		B6B85B71232C157E0007102F /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B85B70232C157E0007102F /* DataModel.m */; };
 		B6B85B76232C5C8C0007102F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B85B74232C5C8C0007102F /* HomeViewController.m */; };
@@ -44,6 +45,7 @@
 		B6B5487D232E0F2900EBE079 /* NewCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewCollectionViewCell.m; sourceTree = "<group>"; };
 		B6B5487F232E114400EBE079 /* NewDataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewDataView.h; sourceTree = "<group>"; };
 		B6B54880232E114400EBE079 /* NewDataView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewDataView.m; sourceTree = "<group>"; };
+		B6B6E1A0232ED9A50038B18B /* App-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "App-Logo.png"; path = "../../../../../FunProjects/Photoshop/MobileSensing/Lab1/App-Logo.png"; sourceTree = "<group>"; };
 		B6B85B6C232B29220007102F /* LogoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoViewController.h; sourceTree = "<group>"; };
 		B6B85B6D232B29220007102F /* LogoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogoViewController.m; sourceTree = "<group>"; };
 		B6B85B6F232C157E0007102F /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				B60D28CA232D43ED00DB10E9 /* ModalViewController.h */,
 				B60D28CB232D43ED00DB10E9 /* ModalViewController.m */,
 				B65B7FFD2328C456001FC23C /* Info.plist */,
+				B6B6E1A0232ED9A50038B18B /* App-Logo.png */,
 				B65B7FF82328C456001FC23C /* Assets.xcassets */,
 				B65B7FFA2328C456001FC23C /* LaunchScreen.storyboard */,
 				B6B85B72232C5C8C0007102F /* MyTableViewClass.h */,
@@ -195,6 +198,7 @@
 			files = (
 				B65B7FFC2328C456001FC23C /* LaunchScreen.storyboard in Resources */,
 				B65B7FF92328C456001FC23C /* Assets.xcassets in Resources */,
+				B6B6E1A1232ED9A50038B18B /* App-Logo.png in Resources */,
 				B65B7FF72328C455001FC23C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

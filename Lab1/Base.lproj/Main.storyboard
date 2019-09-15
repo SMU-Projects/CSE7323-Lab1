@@ -45,7 +45,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Derp" translatesAutoresizingMaskIntoConstraints="NO" id="Oom-GE-JV1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Derp0" translatesAutoresizingMaskIntoConstraints="NO" id="Oom-GE-JV1">
                                 <rect key="frame" x="130" y="223" width="154" height="245"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="154" id="IQB-9D-Nem"/>
@@ -78,6 +78,7 @@
                         <viewLayoutGuide key="safeArea" id="DjJ-HI-OU7"/>
                     </view>
                     <connections>
+                        <outlet property="animationImage" destination="Oom-GE-JV1" id="sg1-Rl-nX9"/>
                         <outlet property="dismissButton" destination="wEb-aT-g3o" id="xcR-UN-NnH"/>
                         <outlet property="slider" destination="3Ii-2B-zQx" id="SIG-5T-kQa"/>
                         <outlet property="sliderLabel" destination="lz1-KT-DjX" id="2wP-SU-6SS"/>
@@ -264,7 +265,7 @@
                                                 <constraint firstAttribute="width" constant="20" id="orH-bX-7bb"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description and some other text and yea" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a85-xV-nQ8">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description and some other text and yea" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a85-xV-nQ8">
                                             <rect key="frame" x="289" y="51" width="120" height="19.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="120" id="2rZ-iU-P4v"/>
@@ -342,15 +343,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YaR-vV-wtq">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="YaR-vV-wtq">
                             <size key="itemSize" width="120" height="120"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="8mA-QF-PJq" customClass="CollectionViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <rect key="frame" x="10" y="10" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -370,7 +371,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cze-tO-uHf">
-                                            <rect key="frame" x="13" y="57" width="80" height="14.5"/>
+                                            <rect key="frame" x="13" y="72" width="80" height="14.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="yZ5-B2-jgF"/>
                                             </constraints>
@@ -385,7 +386,7 @@
                                     <constraint firstAttribute="trailing" secondItem="K89-HI-0C6" secondAttribute="trailing" constant="5" id="QUJ-Qz-XmU"/>
                                     <constraint firstItem="sEP-bQ-98f" firstAttribute="leading" secondItem="8mA-QF-PJq" secondAttribute="leading" constant="5" id="jel-Hq-xqE"/>
                                     <constraint firstItem="cze-tO-uHf" firstAttribute="leading" secondItem="8mA-QF-PJq" secondAttribute="leadingMargin" constant="5" id="oP6-3O-IUb"/>
-                                    <constraint firstItem="cze-tO-uHf" firstAttribute="top" secondItem="8mA-QF-PJq" secondAttribute="topMargin" constant="5" id="tSR-4M-fhR"/>
+                                    <constraint firstItem="cze-tO-uHf" firstAttribute="top" secondItem="8mA-QF-PJq" secondAttribute="topMargin" constant="20" id="tSR-4M-fhR"/>
                                     <constraint firstAttribute="bottom" secondItem="sEP-bQ-98f" secondAttribute="bottom" constant="5" id="z1I-yy-y4Z"/>
                                 </constraints>
                                 <size key="customSize" width="100" height="100"/>
@@ -397,7 +398,7 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewCollectionViewCell" id="hoc-PC-0Ti" customClass="NewCollectionViewCell">
-                                <rect key="frame" x="157" y="0.0" width="100" height="100"/>
+                                <rect key="frame" x="157" y="10" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -461,7 +462,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Derp" translatesAutoresizingMaskIntoConstraints="NO" id="bZ5-M6-c8c">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Derp0" translatesAutoresizingMaskIntoConstraints="NO" id="bZ5-M6-c8c">
                                 <rect key="frame" x="264" y="138" width="120" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="IUF-aK-8Pz"/>
@@ -683,13 +684,13 @@ Duo enim causae nonumes et, hinc torquatos no vel. Ea his minim instructior comp
         </scene>
     </scenes>
     <resources>
-        <image name="Derp" width="601" height="1071"/>
+        <image name="Derp0" width="590" height="965"/>
         <image name="Logo" width="1411" height="521"/>
         <image name="TableImage" width="644" height="618"/>
         <image name="completed_yes" width="800" height="800"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mvD-Qf-3Qo"/>
-        <segue reference="pZf-Tn-Mg0"/>
+        <segue reference="4fp-lp-iCX"/>
+        <segue reference="bdi-kJ-0KQ"/>
     </inferredMetricsTieBreakers>
 </document>

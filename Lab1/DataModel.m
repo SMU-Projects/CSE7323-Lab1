@@ -35,21 +35,21 @@
     if(!_dataObjects){
         
         DataObject* object1 = [[DataObject alloc] init:@"HW: Lab 1"
-                                                      :@"Mobile Sensing"
+                                                      :@"Mobile Sensing Lab: Sink or Swim... Honestly, I ain't tryin' to sink here."
                                                       :[NSDate date]
-                                                      :@(10)
-                                                      :[UIImage imageNamed:@"Derp"]];
+                                                      :@(0)
+                                                      :[UIImage imageNamed:@"Derp0"]];
         
         DataObject* object2 = [[DataObject alloc] init:@"HW: Watch Video Lecture"
-                                                      :@"Computer Architecture; This assignment is due Tuesday"
+                                                      :@"Computer Architecture; This assignment is due Tuesday and holy wow I wish it was due later because I don't have time for this stuff."
                                                       :[NSDate date]
-                                                      :@(2)
-                                                      :[UIImage imageNamed:@"Derp"]];
+                                                      :@(0)
+                                                      :[UIImage imageNamed:@"Derp0"]];
         
         DataObject* object3 = [[DataObject alloc] init:@"I miss you Roger Wong"
-                                                      :@""
+                                                      :@"I'll never forget you pal..."
                                                       :[NSDate date]
-                                                      :@(1)
+                                                      :@(0)
                                                       :[UIImage imageNamed:@"Logo"]];
         
         _dataObjects = [[NSMutableArray alloc] init];
@@ -72,6 +72,26 @@
 
 -(void)addNewDataObject:(DataObject*)object{
     [_dataObjects addObject:object];
+}
+
+-(void)sortDataObjects{
+    // This isn't really great practice... but a selection sort is just so easy to write...
+    for (int i=0; i < self.dataObjects.count-1; i++) {
+        int swapIndex = i;
+        for(int j=i+1; j < self.dataObjects.count; j++ ){
+            if (![self.dataObjects[swapIndex] completion]){
+                if([self.dataObjects[j] completion]){
+                    swapIndex = j;
+                } else if([self.dataObjects[j] importance] > [self.dataObjects[swapIndex] importance]){
+                    swapIndex = j;
+                }
+            }
+        }
+        DataObject* temp = self.dataObjects[i];
+        self.dataObjects[i] = self.dataObjects[swapIndex];
+        self.dataObjects[swapIndex] = temp;
+    }
+    
 }
 
 

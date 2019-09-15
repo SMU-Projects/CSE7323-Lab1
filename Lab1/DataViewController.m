@@ -41,6 +41,7 @@
 }
 - (IBAction)completionSwitchAction:(id)sender {
     self.object.completion = self.completionSwitch.on;
+    [self.myDataModel sortDataObjects];
 }
 
 @end

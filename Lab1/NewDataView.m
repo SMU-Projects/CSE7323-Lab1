@@ -71,12 +71,13 @@
     if (self.coolSwitch.on){
         image = [UIImage imageNamed:@"Logo"];
     } else {
-        image = [UIImage imageNamed:@"Derp"];
+        image = [UIImage imageNamed:@"Derp0"];
     }
     
     DataObject* object = [[DataObject alloc] init:name :info :date :importance :image];
     
     [self.myDataModel addNewDataObject:object];
+    [self.myDataModel sortDataObjects];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

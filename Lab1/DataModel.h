@@ -19,4 +19,6 @@
 
 -(void)addNewDataObject:(DataObject*)object;
 
+-(void)sortDataObjects;
+
 @end
